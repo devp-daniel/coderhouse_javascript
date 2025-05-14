@@ -13,3 +13,4 @@
 <p>Crea una o más funciones JS que generen interacción</p>
 <p>Agrega los ciclos de iteración y/o condicionales necesarios, para que tu proyecto funcione correctamente</p>
 <p>Integra el uso de la Consola JS y de los cuadros de diálogo Prompt, Confirm y Alert</p>
+<p><img src="./assets/readme/programa_v1.png"></p>
