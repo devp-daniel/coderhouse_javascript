@@ -5,6 +5,8 @@
   <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white">
   <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E">
 </h3>
+<h2>Link de GitHub Pages</h2>
+<a href="https://devp-daniel.github.io/coderhouse_javascript/">https://devp-daniel.github.io/coderhouse_javascript/</a>
 <h2>Entrega #1 (30-4-25)</h2>
 <h3>Objetivos generales</h3>
 <p>Armar la estructura base del simulador</p>
