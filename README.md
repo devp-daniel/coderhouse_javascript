@@ -15,11 +15,14 @@
 <p>Agrega los ciclos de iteración y/o condicionales necesarios, para que tu proyecto funcione correctamente</p>
 <p>Integra el uso de la Consola JS y de los cuadros de diálogo Prompt, Confirm y Alert</p>
 <p><img src="./assets/readme/programa_v1.png"></p>
-<br>
 <h2>Entrega #2 (18-5-25)</h2>
 <h3>Objetivos generales</h3>
 <p>Mostrar tu simulador JS interactuando con HTML</p>
 <p>Integrar las herramientas JS aprendidas hasta aquí</p>
+<h3>Objetivos específicos</h3>
+<p>Modifica su estructura anterior, integrando JS con JavaScript mediante el uso de DOM y Eventos.</p>
+<p>Programa el circuito de interacción completo de la lógica de tu aplicación web, agregando las nuevas herramientas JS aprendidas</p>
+<p>Guarda tus objetos o arrays de objetos en localstorage para dejar disponible los datos agregados por el usuario</p>
 <p><img src="./assets/readme/programa_v2_menu.png"></p>
 <p><img src="./assets/readme/programa_v2_juego.png"></p>
 <p><img src="./assets/readme/programa_v2_preguntas.png"></p>
