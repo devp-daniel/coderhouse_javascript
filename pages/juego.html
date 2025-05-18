@@ -1,25 +1,46 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
 
     <!-- CSS Styles -->
-    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/style.css" />
 
     <!-- Icon -->
-    <link rel="icon" href="../assets/images/brain_icon.jpg" type="image/jpg">
+    <link rel="icon" href="../assets/images/brain_icon.jpg" type="image/jpg" />
     <title>Juego</title>
+  </head>
+  <body>
+    <h1>Juego de Trivia</h1>
 
-</head>
-<body>
+    <figure>
+      <img
+        src="../assets/images/brain_icon.jpg"
+        alt="Logo del juego de trivia que dice Quiz"
+      />
+    </figure>
 
-    <figure><img src="../assets/images/brain_icon.jpg" alt="Logo del juego de trivia que dice Quiz"></figure>
+    <main id="juego">
+      <h2 id="pregunta">Aquí aparecerá la pregunta</h2>
 
-    <ul>
-        <a href="../index.html"><li><div>Volver</div></li></a>
+      <div id="opciones">
+        <button class="opcion"></button>
+        <button class="opcion"></button>
+        <button class="opcion"></button>
+      </div>
+    </main>
+
+    <section id="resultado" style="display: none">
+      <h2>Resultado</h2>
+      <p id="puntajeFinal"></p>
+    </section>
+
+    <ul class="menu">
+      <li>
+        <a href="../index.html"><div class="sombreado">Volver</div></a>
+      </li>
     </ul>
 
-    <script src=""></script>
-    
-</body>
+    <script src="../scripts/juego.js"></script>
+  </body>
 </html>

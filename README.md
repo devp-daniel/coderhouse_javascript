@@ -15,3 +15,12 @@
 <p>Agrega los ciclos de iteración y/o condicionales necesarios, para que tu proyecto funcione correctamente</p>
 <p>Integra el uso de la Consola JS y de los cuadros de diálogo Prompt, Confirm y Alert</p>
 <p><img src="./assets/readme/programa_v1.png"></p>
+<br>
+<h2>Entrega #2 (18-5-25)</h2>
+<h3>Objetivos generales</h3>
+<p>Mostrar tu simulador JS interactuando con HTML</p>
+<p>Integrar las herramientas JS aprendidas hasta aquí</p>
+<p><img src="./assets/readme/programa_v2_menu.png"></p>
+<p><img src="./assets/readme/programa_v2_juego.png"></p>
+<p><img src="./assets/readme/programa_v2_preguntas.png"></p>
+<p><img src="./assets/readme/programa_v2_puntaje.png"></p>

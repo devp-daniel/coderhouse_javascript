@@ -1,27 +1,42 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
 
     <!-- CSS Styles -->
-    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/style.css" />
 
     <!-- Icon -->
-    <link rel="icon" href="./assets/images/brain_icon.jpg" type="image/jpg">
+    <link rel="icon" href="./assets/images/brain_icon.jpg" type="image/jpg" />
     <title>Juego de Trivia</title>
+  </head>
+  <body>
+    <h1>Juego de Trivia</h1>
 
-</head>
-<body>
-
-    <figure><img src="./assets/images/quiz_logo.jpg" alt="Logo del juego de trivia que dice Quiz"></figure>
-
-    <ul>
-        <a href="./pages/juego.html"><li><div>Iniciar Juego</div></li></a>
-        <a href="./pages/preguntas_guardadas.html"><li><div>Preguntas Guardadas</div></li></a>
-        <a href="./pages/puntajes.html"><li><div>Puntajes</div></li></a>
-    </ul>
-
-    <script src=""></script>
-    
-</body>
+    <main>
+      <figure>
+        <img
+          src="./assets/images/quiz_logo.jpg"
+          alt="Logo del juego de trivia que dice Quiz"
+        />
+      </figure>
+      <ul class="menu">
+        <li>
+          <a href="./pages/juego.html"
+            ><div class="sombreado">Iniciar Juego</div></a
+          >
+        </li>
+        <li>
+          <a href="./pages/preguntas.html"
+            ><div class="sombreado">Preguntas Guardadas</div></a
+          >
+        </li>
+        <li>
+          <a href="./pages/puntajes.html"
+            ><div class="sombreado">Puntajes</div></a
+          >
+        </li>
+      </ul>
+    </main>
+  </body>
 </html>
