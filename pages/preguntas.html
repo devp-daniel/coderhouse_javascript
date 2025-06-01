@@ -34,35 +34,70 @@
         />
       </figure>
 
-      <h2 class="font-bold text-base md:text-lg lg:text-xl">
-        Agregar Nueva Pregunta
-      </h2>
+      <section class="bg-cyan-100">
+        <h2 class="font-bold text-base md:text-lg lg:text-xl mt-1">
+          Agregar Nueva Pregunta
+        </h2>
 
-      <form
-        class="flex flex-col items-center justify-center text-center"
-        id="formPregunta"
-      >
-        <label>Pregunta:</label>
-        <input type="text" id="pregunta" required />
-        <label>Opción A:</label>
-        <input type="text" id="opcionA" required />
-        <label>Opción B:</label>
-        <input type="text" id="opcionB" required />
-        <label>Opción C:</label>
-        <input type="text" id="opcionC" required />
-        <label>Respuesta correcta (A, B o C):</label>
-        <input type="text" id="respuesta" maxlength="1" required />
+        <form
+          class="flex flex-col items-center justify-center text-center"
+          id="formPregunta"
+        >
+          <label>Pregunta:</label>
+          <input
+            class="border border-black rounded-xl w-64 md:w-90 lg:w-120"
+            type="text"
+            id="pregunta"
+            required
+          />
+          <label>Opción A:</label>
+          <input
+            class="border border-black rounded-xl w-64 md:w-90 lg:w-120"
+            type="text"
+            id="opcionA"
+            required
+          />
+          <label>Opción B:</label>
+          <input
+            class="border border-black rounded-xl w-64 md:w-90 lg:w-120"
+            type="text"
+            id="opcionB"
+            required
+          />
+          <label>Opción C:</label>
+          <input
+            class="border border-black rounded-xl w-64 md:w-90 lg:w-120"
+            type="text"
+            id="opcionC"
+            required
+          />
+          <label>Respuesta correcta (A, B o C):</label>
+          <input
+            class="border border-black rounded-xl w-64 md:w-90 lg:w-120"
+            type="text"
+            id="respuesta"
+            maxlength="1"
+            required
+          />
 
-        <button class="btn-guardar" type="submit">Guardar Pregunta</button>
-      </form>
+          <button
+            class="btn-guardar my-5 border border-black rounded-xl w-64 md:w-90 lg:w-120 bg-yellow-300 hover:bg-yellow-400"
+            type="submit"
+          >
+            Guardar Pregunta
+          </button>
+        </form>
+      </section>
 
-      <h3 class="font-bold text-base md:text-lg lg:text-xl">
-        Preguntas Guardadas:
-      </h3>
+      <section class="bg-cyan-100 mt-2">
+        <h3 class="font-bold text-base md:text-lg lg:text-xl">
+          Preguntas Guardadas:
+        </h3>
 
-      <ul id="listaPreguntas"></ul>
+        <ul id="listaPreguntas"></ul>
+      </section>
 
-      <ul class="menu">
+      <ul class="menu my-3">
         <li>
           <a href="../index.html"><div class="sombreado">Volver</div></a>
         </li>
