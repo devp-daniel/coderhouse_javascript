@@ -96,7 +96,14 @@ function mostrarPreguntas() {
     // Botón eliminar con imagen
     const tdEliminar = document.createElement("td");
     const btnEliminar = document.createElement("button");
-    btnEliminar.classList.add("btn-eliminar");
+    btnEliminar.classList.add(
+      "btn-eliminar",
+      "items-center",
+      "border",
+      "border-black",
+      "h-7",
+      "w-7"
+    );
     const imgEliminar = document.createElement("img");
     imgEliminar.src = "../assets/images/eliminar_icon.jpg";
     imgEliminar.alt = "Boton de eliminar";

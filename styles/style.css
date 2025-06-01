@@ -18,22 +18,22 @@ body {
   color: black;
 }
 
-figure {
+/* figure {
   display: flex;
   justify-content: center;
   height: 65vh;
   width: auto;
-}
+} */
 
 h1 {
   color: #72b3c9;
 }
 
-h2,
+/* h2,
 h3 {
   text-align: center;
   font-size: 25px;
-}
+} */
 
 .sombreado {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -55,8 +55,7 @@ a {
 }
 
 .menu li {
-  font-size: 25px;
-  width: 20em;
+  width: 16em;
   height: 2em;
   border-left: 0.1em solid;
   position: relative;
@@ -109,7 +108,7 @@ a {
 
 /* Juego HTML */
 
-main#juego,
+/* main#juego,
 #opciones,
 p#puntajeFinal {
   display: flex;
@@ -150,11 +149,11 @@ p#puntajeFinal {
   font-size: 20px;
   border-radius: 5px;
   padding: 10px 20px;
-}
+} */
 
 /* Preguntas guardadas con form html */
 
-form {
+/* form {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -181,7 +180,7 @@ form {
 
 /* Boton de guardar pregunta */
 
-.btn-guardar {
+/* .btn-guardar {
   font-family: "Montserrat", sans-serif;
   background-color: #4caf50;
   color: white;
@@ -194,10 +193,10 @@ form {
 
 .btn-guardar:hover {
   background-color: #388e3c;
-}
+} */
 
 /* Tabla de preguntas guardadas y Tabla de puntajes */
-
+/* 
 .tabla-preguntas,
 .tabla-puntajes {
   width: 98%;
@@ -226,10 +225,10 @@ form {
 .tabla-preguntas tbody tr:hover,
 .tabla-puntajes tbody tr:hover {
   background-color: #d0eaf5;
-}
+} */
 
 /* Boton eliminar */
-
+/* 
 .btn-eliminar {
   background-color: #ed1b24;
   border: none;
@@ -242,4 +241,4 @@ form {
   width: 24px;
   height: 24px;
   vertical-align: middle;
-}
+} */

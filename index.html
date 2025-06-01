@@ -2,22 +2,33 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- CSS Styles -->
     <link rel="stylesheet" href="./styles/style.css" />
 
     <!-- Icon -->
-    <link rel="icon" href="./assets/images/brain_icon.jpg" type="image/jpg" />
+    <link
+      rel="icon"
+      href="./assets/images/signo_pregunta.png"
+      type="image/png"
+    />
     <title>Juego de Trivia</title>
   </head>
-  <body>
+  <body
+    class="flex flex-col items-center justify-center text-sm md:text-base lg:text-lg"
+  >
     <h1>Juego de Trivia</h1>
 
     <main>
       <figure>
         <img
-          src="./assets/images/quiz_logo.jpg"
+          src="./assets/images/quiz_logo.png"
           alt="Logo del juego de trivia que dice Quiz"
+          class="w-screen sm:w-96 md:w-md lg:w-lg"
         />
       </figure>
       <ul class="menu">

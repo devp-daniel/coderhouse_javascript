@@ -2,7 +2,10 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <title>Preguntas Guardadas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- CSS Styles -->
 
@@ -10,45 +13,62 @@
 
     <!-- Icon -->
 
-    <link rel="icon" href="../assets/images/brain_icon.jpg" type="image/jpg" />
+    <link
+      rel="icon"
+      href="../assets/images/signo_pregunta.png"
+      type="image/png"
+    />
+    <title>Preguntas Guardadas</title>
   </head>
-  <body>
-    <h1>Preguntas Guardadas</h1>
+  <body
+    class="flex flex-col items-center justify-center text-center text-sm md:text-base lg:text-lg"
+  >
+    <main>
+      <h1>Preguntas Guardadas</h1>
 
-    <figure>
-      <img
-        src="../assets/images/brain_icon.jpg"
-        alt="Logo del juego de trivia que dice Quiz"
-      />
-    </figure>
+      <figure class="flex justify-center items-center">
+        <img
+          src="../assets/images/signo_pregunta.png"
+          alt="Logo del juego de trivia que dice Quiz"
+          class="w-screen sm:w-96 md:w-md lg:w-lg"
+        />
+      </figure>
 
-    <h2>Agregar Nueva Pregunta</h2>
+      <h2 class="font-bold text-base md:text-lg lg:text-xl">
+        Agregar Nueva Pregunta
+      </h2>
 
-    <form id="formPregunta">
-      <label>Pregunta:</label>
-      <input type="text" id="pregunta" required />
-      <label>Opción A:</label>
-      <input type="text" id="opcionA" required />
-      <label>Opción B:</label>
-      <input type="text" id="opcionB" required />
-      <label>Opción C:</label>
-      <input type="text" id="opcionC" required />
-      <label>Respuesta correcta (A, B o C):</label>
-      <input type="text" id="respuesta" maxlength="1" required />
+      <form
+        class="flex flex-col items-center justify-center text-center"
+        id="formPregunta"
+      >
+        <label>Pregunta:</label>
+        <input type="text" id="pregunta" required />
+        <label>Opción A:</label>
+        <input type="text" id="opcionA" required />
+        <label>Opción B:</label>
+        <input type="text" id="opcionB" required />
+        <label>Opción C:</label>
+        <input type="text" id="opcionC" required />
+        <label>Respuesta correcta (A, B o C):</label>
+        <input type="text" id="respuesta" maxlength="1" required />
 
-      <button class="btn-guardar" type="submit">Guardar Pregunta</button>
-    </form>
+        <button class="btn-guardar" type="submit">Guardar Pregunta</button>
+      </form>
 
-    <h3>Preguntas Guardadas:</h3>
+      <h3 class="font-bold text-base md:text-lg lg:text-xl">
+        Preguntas Guardadas:
+      </h3>
 
-    <ul id="listaPreguntas"></ul>
+      <ul id="listaPreguntas"></ul>
 
-    <ul class="menu">
-      <li>
-        <a href="../index.html"><div class="sombreado">Volver</div></a>
-      </li>
-    </ul>
+      <ul class="menu">
+        <li>
+          <a href="../index.html"><div class="sombreado">Volver</div></a>
+        </li>
+      </ul>
 
-    <script src="../scripts/preguntas.js"></script>
+      <script src="../scripts/preguntas.js"></script>
+    </main>
   </body>
 </html>
