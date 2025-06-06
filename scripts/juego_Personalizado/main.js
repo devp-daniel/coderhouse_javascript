@@ -1,7 +1,7 @@
 import { iniciarJuego } from "./juego.js";
 import { mostrarPreguntas } from "./preguntas.js";
 import { mostrarPuntajes } from "./puntajes.js";
-import { mostrarVista } from "./ui.js";
+import { mostrarVista } from "./vista.js";
 
 document.getElementById("btn-jugar").addEventListener("click", () => {
   iniciarJuego();

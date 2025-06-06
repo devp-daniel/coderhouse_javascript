@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
     <!-- CSS Styles -->
-    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="../src/style.css" />
+
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="../src/output.css" />
 
     <!-- Icon -->
     <link
@@ -19,7 +19,6 @@
 
     <title>Juego de Trivia</title>
   </head>
-
   <body
     class="flex flex-col items-center justify-center text-center text-sm md:text-base lg:text-lg"
   >
@@ -31,7 +30,7 @@
           <img
             src="../assets/images/quiz_logo.png"
             alt="Logo del juego de trivia que dice Quiz"
-            class="w-screen sm:w-96 md:w-md lg:w-lg"
+            class="w-screen sm:w-2xs md:w-xs lg:w-sm mx-auto"
           />
         </figure>
         <ul class="style-menu">
@@ -52,28 +51,28 @@
           <img
             src="../assets/images/quiz_logo.png"
             alt="Logo del juego de trivia que dice Quiz"
-            class="w-screen sm:w-96 md:w-md lg:w-lg"
+            class="w-screen sm:w-2xs md:w-xs lg:w-sm mx-auto"
           />
         </figure>
         <h2
           id="pregunta"
-          class="bg-white text-base md:text-lg lg:text-xl font-bold w-66 md:w-92 lg:w-122 mb-2"
+          class="bg-white text-base md:text-lg lg:text-xl font-bold w-66 md:w-92 lg:w-122"
         >
           Aqui aparecerá la pregunta
         </h2>
-        <div id="opciones" class="flex flex-col items-center">
+        <div id="opciones" class="flex flex-col items-center gap-2 my-6">
           <button
-            class="opcion sombreado bg-white hover:bg-cyan-300 border border-black rounded-xl w-64 md:w-90 lg:w-120 my-2"
+            class="opcion sombreado bg-white hover:bg-cyan-300 border border-black rounded-xl w-64 md:w-90 lg:w-120"
           ></button>
           <button
-            class="opcion sombreado bg-white hover:bg-cyan-300 border border-black rounded-xl w-64 md:w-90 lg:w-120 my-2"
+            class="opcion sombreado bg-white hover:bg-cyan-300 border border-black rounded-xl w-64 md:w-90 lg:w-120"
           ></button>
           <button
-            class="opcion sombreado bg-white hover:bg-cyan-300 border border-black rounded-xl w-64 md:w-90 lg:w-120 my-2"
+            class="opcion sombreado bg-white hover:bg-cyan-300 border border-black rounded-xl w-64 md:w-90 lg:w-120"
           ></button>
         </div>
         <button
-          class="btn-volver-menu sombreado bg-white hover:bg-cyan-300 border border-black rounded-xl w-64 md:w-90 lg:w-120 my-5"
+          class="btn-volver-menu sombreado bg-white hover:bg-cyan-300 border border-black rounded-xl w-64 md:w-90 lg:w-120"
         >
           Volver al Menú
         </button>
@@ -84,7 +83,7 @@
           <img
             src="../assets/images/quiz_logo.png"
             alt="Logo del juego de trivia que dice Quiz"
-            class="w-screen sm:w-96 md:w-md lg:w-lg"
+            class="w-screen sm:w-2xs md:w-xs lg:w-sm mx-auto"
           />
         </figure>
         <h2 class="font-bold text-center text-base md:text-lg lg:text-xl">
@@ -92,10 +91,10 @@
         </h2>
         <p
           id="puntajeFinal"
-          class="text-center bg-yellow-300 border border-black w-64 md:w-90 lg:w-120 my-3 mx-auto"
+          class="text-center bg-yellow-300 border border-black w-64 md:w-90 lg:w-120 mx-auto my-3"
         ></p>
         <button
-          class="btn-volver-menu sombreado bg-white hover:bg-cyan-300 border border-black rounded-xl w-64 md:w-90 lg:w-120 my-5"
+          class="btn-volver-menu sombreado bg-white hover:bg-cyan-300 border border-black rounded-xl w-64 md:w-90 lg:w-120 my-3"
         >
           Volver al Menú
         </button>
@@ -103,6 +102,13 @@
 
       <!-- Gestion de Preguntas -->
       <section id="preguntas" class="vista" style="display: none">
+        <figure class="flex justify-center items-center">
+          <img
+            src="../assets/images/signo_pregunta.png"
+            alt="Logo del juego de trivia que dice Quiz"
+            class="w-screen sm:w-2xs md:w-xs lg:w-sm mx-auto"
+          />
+        </figure>
         <div class="bg-cyan-100">
           <h2 class="font-bold text-base md:text-lg lg:text-xl mt-1">
             Agregar Nueva Pregunta
@@ -114,35 +120,35 @@
           >
             <label>Pregunta:</label>
             <input
-              class="border border-black rounded-xl w-64 md:w-90 lg:w-120"
+              class="bg-white border border-black rounded-xl w-64 md:w-90 lg:w-120"
               type="text"
-              id="pregunta"
+              id="nuevaPregunta"
               required
             />
             <label>Opción A:</label>
             <input
-              class="border border-black rounded-xl w-64 md:w-90 lg:w-120"
+              class="bg-white border border-black rounded-xl w-64 md:w-90 lg:w-120"
               type="text"
               id="opcionA"
               required
             />
             <label>Opción B:</label>
             <input
-              class="border border-black rounded-xl w-64 md:w-90 lg:w-120"
+              class="bg-white border border-black rounded-xl w-64 md:w-90 lg:w-120"
               type="text"
               id="opcionB"
               required
             />
             <label>Opción C:</label>
             <input
-              class="border border-black rounded-xl w-64 md:w-90 lg:w-120"
+              class="bg-white border border-black rounded-xl w-64 md:w-90 lg:w-120"
               type="text"
               id="opcionC"
               required
             />
             <label>Respuesta correcta (A, B o C):</label>
             <input
-              class="border border-black rounded-xl w-64 md:w-90 lg:w-120"
+              class="bg-white border border-black rounded-xl w-64 md:w-90 lg:w-120"
               type="text"
               id="respuesta"
               maxlength="1"
@@ -157,7 +163,7 @@
             </button>
           </form>
         </div>
-        <div class="bg-cyan-100 mt-2">
+        <div class="bg-cyan-100 mt-4">
           <h3 class="font-bold text-base md:text-lg lg:text-xl">
             Preguntas Guardadas:
           </h3>
@@ -165,14 +171,33 @@
           <ul id="listaPreguntas"></ul>
         </div>
 
-        <button class="btn-volver-menu">Volver al Menú</button>
+        <button
+          class="btn-volver-menu sombreado bg-white hover:bg-cyan-300 border border-black rounded-xl w-64 md:w-90 lg:w-120 my-5"
+        >
+          Volver al Menú
+        </button>
       </section>
 
       <!-- Puntajes -->
       <section id="puntajes" class="vista" style="display: none">
-        <h2>Puntajes Guardados</h2>
-        <div id="lista-puntajes"></div>
-        <button class="btn-volver-menu">Volver al Menú</button>
+        <figure class="flex justify-center items-center">
+          <img
+            src="../assets/images/puntaje.png"
+            alt="Logo del juego de trivia que dice Quiz"
+            class="w-screen sm:w-2xs md:w-xs lg:w-sm mx-auto"
+          />
+        </figure>
+        <div class="bg-cyan-100 mt-2">
+          <h2 class="font-bold text-base md:text-lg lg:text-xl">
+            Puntajes Guardados
+          </h2>
+          <ul id="lista-puntajes"></ul>
+        </div>
+        <button
+          class="btn-volver-menu sombreado bg-white hover:bg-cyan-300 border border-black rounded-xl w-64 md:w-90 lg:w-120 my-5"
+        >
+          Volver al Menú
+        </button>
       </section>
 
       <script
