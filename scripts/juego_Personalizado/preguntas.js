@@ -1,59 +1,73 @@
+// Función para mostrar y gestionar las preguntas personalizadas
 export function mostrarPreguntas() {
-  const form = document.getElementById("formPregunta");
-  const lista = document.getElementById("listaPreguntas");
+  const form = document.getElementById("formPregunta"); // Formulario de ingreso de preguntas
+  const lista = document.getElementById("listaPreguntas"); // Contenedor donde se muestra la lista de preguntas
 
-  // Cargar preguntas del localStorage al iniciar
-
+  // Evento de envío del formulario para agregar una nueva pregunta
   form.addEventListener("submit", (e) => {
-    e.preventDefault(); //Para evitar que se recargue la página cada vez que se envía el formulario
+    e.preventDefault(); // Evita que la página se recargue al enviar el formulario
 
-    // Recoge los valores de los inputs del formulario
-    const pregunta = document.getElementById("pregunta").value;
-    const opcionA = document.getElementById("opcionA").value;
-    const opcionB = document.getElementById("opcionB").value;
-    const opcionC = document.getElementById("opcionC").value;
-    const respuesta = document.getElementById("respuesta").value.toUpperCase(); // .toUpperCase() para que la respuesta siempre sea mayúscula y no genere un error :(
+    // Obtiene los valores ingresados por el usuario en el formulario
+    const pregunta = document.getElementById("pregunta").value; // Texto
+    const opcionA = document.getElementById("opcionA").value; // Opción A
+    const opcionB = document.getElementById("opcionB").value; // Opción B
+    const opcionC = document.getElementById("opcionC").value; // Opción C
+    const respuesta = document.getElementById("respuesta").value.toUpperCase(); // Respuesta correcta A, B o C en mayúscula
 
+    // Validación de la respuesta y notificacion de Toastify diciendo que debe ser A, B o C en mayúscula
     if (!["A", "B", "C"].includes(respuesta)) {
-      // Siempre en mayúscula
-      alert("La respuesta debe ser A, B o C");
+      Toastify({
+        text: "La respuesta debe ser A, B o C",
+        duration: 3000,
+        gravity: "top",
+        position: "right",
+        backgroundColor: "#ff6b6b",
+        stopOnFocus: true,
+      }).showToast();
       return;
     }
 
-    // Arrays que preparan la información para el objeto de las nuevas preguntas
-    const opciones = [opcionA, opcionB, opcionC];
-    const indiceRespuesta = { A: 0, B: 1, C: 2 }[respuesta]; // Convierte la letra de la respuesta en un número, esta en mayuscula!!
-    const respuestaCorrecta = opciones[indiceRespuesta];
+    const opciones = [opcionA, opcionB, opcionC]; // Array de opciones
+    const indiceRespuesta = { A: 0, B: 1, C: 2 }[respuesta]; // Convierte la letra en índice numérico
+    const respuestaCorrecta = opciones[indiceRespuesta]; // Obtiene el texto de la respuesta correcta
 
-    // Formato del objeto que guarda las nuevas preguntas
+    // Crea el objeto de la nueva pregunta personalizada
     const nuevaPregunta = {
       pregunta,
       opciones,
       respuestaCorrecta,
     };
 
-    // Primero obtener las preguntas guardadas en localStorage
+    // Recupera las preguntas guardadas en localStorage (o un array vacío si no hay)
     let preguntasGuardadas =
       JSON.parse(localStorage.getItem("preguntasGuardadas")) || [];
-    // Usar push para añadir la nueva pregunta al array de preguntas guardadas
+    // Agrega la nueva pregunta al array
     preguntasGuardadas.push(nuevaPregunta);
-    // Guardar el nuevo array en localStorage
+    // Guarda el array actualizado en localStorage
     localStorage.setItem(
       "preguntasGuardadas",
       JSON.stringify(preguntasGuardadas)
     );
 
-    form.reset(); // Limpia el formulario después de enviar y así no queda información de la pregunta anterior
-    mostrarPreguntas(); // Nuevamente llamar la función para actualizar la lista de preguntas
+    form.reset(); // Limpia el formulario después de agregar la pregunta
+    // Notificación de éxito usando Toastify
+    Toastify({
+      text: "¡Pregunta guardada exitosamente!",
+      duration: 3000,
+      gravity: "top",
+      position: "right",
+      backgroundColor: "#4caf50",
+    }).showToast();
+    mostrarPreguntas(); // Actualiza la lista de preguntas mostrada en pantalla
   });
 
-  // Funcion para mostrar las preguntas guardadas en una tabla y sus 4 columnas
+  // Función para mostrar todas las preguntas guardadas en una tabla
   function mostrarPreguntas() {
-    lista.innerHTML = ""; // Limpia la lista y quita la información que queda al refrescar la página
+    lista.innerHTML = ""; // Limpia el contenedor antes de mostrar la tabla
 
-    // Crear tabla
+    // Crea la estructura de la tabla para mostrar preguntas
     const table = document.createElement("table");
-    table.classList.add("tabla-preguntas"); // Añadir clase para el CSS
+    table.classList.add("tabla-preguntas"); // Clase para estilos CSS
     table.innerHTML = `
       <thead>
         <tr>
@@ -66,19 +80,20 @@ export function mostrarPreguntas() {
       <tbody></tbody>
     `;
 
-    const tbody = table.querySelector("tbody"); //querySelector para eligir el cuerpo de la tabla
+    const tbody = table.querySelector("tbody"); // Obtiene el cuerpo de la tabla
     const preguntas =
-      JSON.parse(localStorage.getItem("preguntasGuardadas")) || []; // Recuperar las preguntas guardadas en localStorage
+      JSON.parse(localStorage.getItem("preguntasGuardadas")) || []; // Recupera preguntas guardadas
 
+    // Recorre cada pregunta y la agrega como una fila en la tabla
     preguntas.forEach((pregunta, index) => {
       const row = document.createElement("tr");
 
-      // Pregunta
+      // Columna de pregunta
       const tdPregunta = document.createElement("td");
       tdPregunta.textContent = pregunta.pregunta;
       row.appendChild(tdPregunta);
 
-      // Opciones
+      // Columna de opciones A, B, C
       const tdOpciones = document.createElement("td");
       tdOpciones.innerHTML = `
         A: ${pregunta.opciones[0]} <br>
@@ -87,12 +102,12 @@ export function mostrarPreguntas() {
       `;
       row.appendChild(tdOpciones);
 
-      // Respuesta
+      // Columna de respuesta correcta
       const tdRespuesta = document.createElement("td");
       tdRespuesta.textContent = pregunta.respuestaCorrecta;
       row.appendChild(tdRespuesta);
 
-      // Botón eliminar con imagen
+      // Columna de botón para eliminar la pregunta
       const tdEliminar = document.createElement("td");
       const btnEliminar = document.createElement("button");
       btnEliminar.classList.add(
@@ -104,15 +119,24 @@ export function mostrarPreguntas() {
         "w-7"
       );
       const imgEliminar = document.createElement("img");
-      imgEliminar.src = "../../assets/images/eliminar_icon.jpg"; // Ruta de la imagen de eliminar
+      imgEliminar.src = "../../assets/images/eliminar_icon.jpg"; // Icono de eliminar
       imgEliminar.alt = "Boton de eliminar";
       btnEliminar.appendChild(imgEliminar);
-      // Evento de click para el boton
+      // Evento para eliminar la pregunta seleccionada
       btnEliminar.addEventListener("click", () => {
-        preguntas.splice(index, 1); // .splice para eliminar la pregunta especifica del array
-        // Guardar el nuevo array con la pregunta eliminada en localStorage
+        preguntas.splice(index, 1); // Elimina la pregunta del array
+        // Guarda el array actualizado en localStorage
         localStorage.setItem("preguntasGuardadas", JSON.stringify(preguntas));
-        mostrarPreguntas();
+        // Notificación de Toastify informando que la pregunta fue eliminada
+        Toastify({
+          text: "Pregunta eliminada exitosamente!",
+          duration: 3000,
+          gravity: "top",
+          position: "right",
+          backgroundColor: "#ff9800",
+          stopOnFocus: true,
+        }).showToast();
+        mostrarPreguntas(); // Actualiza la tabla tras eliminar
       });
       tdEliminar.appendChild(btnEliminar);
       row.appendChild(tdEliminar);
@@ -120,7 +144,7 @@ export function mostrarPreguntas() {
       tbody.appendChild(row);
     });
 
-    // Insertar la tabla
+    // Inserta la tabla en el contenedor de la lista
     lista.appendChild(table);
   }
 

@@ -1,15 +1,18 @@
+// Función que inicia el juego de preguntas
 export function iniciarJuego() {
-  // Obtener preguntas guardadas desde localStorage
+  // Función para obtener preguntas personalizadas guardadas en localStorage
   function obtenerPreguntasPersonalizadas() {
     const guardadas = localStorage.getItem("preguntasGuardadas");
     if (guardadas) {
+      // Si existen preguntas guardadas, se convierten de JSON a objeto JavaScript
       return JSON.parse(guardadas);
     } else {
+      // Si no hay preguntas guardadas, retorna un array vacío
       return [];
     }
   }
 
-  // Preguntas fijas para que el juego no cargue vacío
+  // Array de preguntas fijas para que el juego no inicie vacío
   const preguntasFijas = [
     {
       pregunta: "¿Cuál es la capital de Francia?",
@@ -28,34 +31,35 @@ export function iniciarJuego() {
     },
   ];
 
-  // Se combinan las preguntas fijas con las personalizadas mediante un concat para conseguir un array global
-
+  // Se combinan las preguntas fijas con las personalizadas para crear el array global de preguntas
   let preguntas = preguntasFijas.concat(obtenerPreguntasPersonalizadas()); // preguntas = array global
 
-  // Mezclador de orden de las preguntas para hacerlo más dinamico
+  // Mezcla aleatoriamente el orden de las preguntas
   preguntas = preguntas.sort(() => Math.random() - 0.5);
 
-  // Variables iniciales
+  // Variables globales para el juego
   let preguntaActual = 0;
   let puntaje = 0;
 
   // Manipulación del DOM
-  const contenedorPregunta = document.getElementById("pregunta");
-  const opciones = document.querySelectorAll(".opcion");
-  const puntajeFinalElemento = document.getElementById("puntajeFinal");
+  const contenedorPregunta = document.getElementById("pregunta"); // Muestra la pregunta
+  const opciones = document.querySelectorAll(".opcion"); // Opciones
+  const puntajeFinalElemento = document.getElementById("puntajeFinal"); // Muestra el puntaje final
 
-  // Funcion para mostrar las preguntas con la opciones
+  // Función que muestra la pregunta actual y sus opciones
   function mostrarPregunta() {
     const pregunta = preguntas[preguntaActual];
-    contenedorPregunta.textContent = pregunta.pregunta;
+    contenedorPregunta.textContent = pregunta.pregunta; // Se muestra el texto de la pregunta
     opciones.forEach((opcion, index) => {
-      opcion.textContent = pregunta.opciones[index];
-      opcion.style.display = "inline-block"; // Por si se vuelven a ocultar los botones
-      opcion.onclick = () => verificarRespuesta(pregunta.opciones[index]);
+      opcion.textContent = pregunta.opciones[index]; // Se asigna el texto de cada opción
+      opcion.style.display = "inline-block"; // Asegura que los botones estén visibles
+      opcion.addEventListener("click", () =>
+        verificarRespuesta(pregunta.opciones[index])
+      );
     });
   }
 
-  // Funcion para verificar la respuesta seleccionada y acumular el puntaje
+  // Función que verifica si la respuesta seleccionada es correcta y actualiza el puntaje
   function verificarRespuesta(respuestaSeleccionada) {
     const pregunta = preguntas[preguntaActual];
     if (respuestaSeleccionada === pregunta.respuestaCorrecta) {
@@ -70,24 +74,23 @@ export function iniciarJuego() {
     }
   }
 
-  // Funcion para mostrar el puntaje final y guardar en localStorage
+  // Función que muestra el resultado final y guarda el puntaje en localStorage
   function mostrarResultadoFinal() {
-    document.getElementById("juego").style.display = "none"; //Oculta la pregunta
-    document.getElementById("resultado").style.display = "block"; // Hace que se muestre el resultado
+    document.getElementById("juego").style.display = "none"; // Oculta la sección del juego
+    document.getElementById("resultado").style.display = "block"; // Muestra la sección de resultado
     puntajeFinalElemento.textContent = `Tu puntaje final es: ${puntaje}/${preguntas.length}`;
 
-    // Se crea un objeto con la fecha y el puntaje
+    // Se crea un objeto con la fecha y el puntaje obtenido
     const nuevoPuntaje = {
       fecha: new Date().toLocaleString(), // .toLocaleString para mostrar mas ordenada la fecha y la hora
-      puntaje: puntaje, // Guardar como number
+      puntaje: puntaje,
       total: preguntas.length,
     };
-    // Guardar el puntaje en localStorage
+    // Se recuperan los puntajes anteriores del localStorage (o un array vacío si no hay)
     const puntajes = JSON.parse(localStorage.getItem("puntajes")) || [];
-    puntajes.push(nuevoPuntaje);
-    localStorage.setItem("puntajes", JSON.stringify(puntajes));
+    puntajes.push(nuevoPuntaje); // Se agrega el nuevo puntaje al array
+    localStorage.setItem("puntajes", JSON.stringify(puntajes)); // Se guarda el array actualizado en localStorage
   }
 
-  // Iniciar el juego
   mostrarPregunta();
 }

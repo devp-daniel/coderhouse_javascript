@@ -40,13 +40,10 @@
           />
         </figure>
         <ul class="style-menu">
-          <li id="btn-jugar">
-            <div class="sombreado">Iniciar Juego Personalizado</div>
+          <li id="jugarApi">
+            <div class="sombreado">Iniciar Juego Api</div>
           </li>
-          <li id="btn-preguntas">
-            <div class="sombreado">Preguntas Guardadas</div>
-          </li>
-          <li id="btn-puntajes"><div class="sombreado">Puntajes</div></li>
+          <li id="btn-puntajesApi"><div class="sombreado">Puntajes</div></li>
           <li>
             <a href="../index.html"><div class="sombreado">Volver</div></a>
           </li>
@@ -54,7 +51,7 @@
       </section>
 
       <!-- Juego + Resultado -->
-      <section id="juego" class="vista" style="display: none">
+      <section id="juegoApi" class="vista" style="display: none">
         <figure class="flex justify-center items-center">
           <img
             src="../assets/images/quiz_logo.png"
@@ -63,22 +60,15 @@
           />
         </figure>
         <h2
-          id="pregunta"
+          id="preguntaApi"
           class="bg-white text-base md:text-lg lg:text-xl font-bold w-66 md:w-92 lg:w-122"
         >
           Aqui aparecerá la pregunta
         </h2>
-        <div id="opciones" class="flex flex-col items-center gap-2 my-6">
-          <button
-            class="opcion sombreado bg-white hover:bg-cyan-300 border border-black rounded-xl w-64 md:w-90 lg:w-120"
-          ></button>
-          <button
-            class="opcion sombreado bg-white hover:bg-cyan-300 border border-black rounded-xl w-64 md:w-90 lg:w-120"
-          ></button>
-          <button
-            class="opcion sombreado bg-white hover:bg-cyan-300 border border-black rounded-xl w-64 md:w-90 lg:w-120"
-          ></button>
-        </div>
+        <div
+          id="opcionesApi"
+          class="flex flex-col items-center gap-2 my-6"
+        ></div>
         <button
           class="btn-volver-menu sombreado bg-white hover:bg-cyan-300 border border-black rounded-xl w-64 md:w-90 lg:w-120"
         >
@@ -108,84 +98,6 @@
         </button>
       </section>
 
-      <!-- Gestion de Preguntas -->
-      <section id="preguntas" class="vista" style="display: none">
-        <figure class="flex justify-center items-center">
-          <img
-            src="../assets/images/signo_pregunta.png"
-            alt="Logo del juego de trivia que dice Quiz"
-            class="w-screen sm:w-2xs md:w-xs lg:w-sm mx-auto"
-          />
-        </figure>
-        <div class="bg-cyan-100">
-          <h2 class="font-bold text-base md:text-lg lg:text-xl mt-1">
-            Agregar Nueva Pregunta
-          </h2>
-
-          <form
-            class="flex flex-col items-center justify-center text-center"
-            id="formPregunta"
-          >
-            <label>Pregunta:</label>
-            <input
-              class="bg-white border border-black rounded-xl w-64 md:w-90 lg:w-120"
-              type="text"
-              id="nuevaPregunta"
-              required
-            />
-            <label>Opción A:</label>
-            <input
-              class="bg-white border border-black rounded-xl w-64 md:w-90 lg:w-120"
-              type="text"
-              id="opcionA"
-              required
-            />
-            <label>Opción B:</label>
-            <input
-              class="bg-white border border-black rounded-xl w-64 md:w-90 lg:w-120"
-              type="text"
-              id="opcionB"
-              required
-            />
-            <label>Opción C:</label>
-            <input
-              class="bg-white border border-black rounded-xl w-64 md:w-90 lg:w-120"
-              type="text"
-              id="opcionC"
-              required
-            />
-            <label>Respuesta correcta (A, B o C):</label>
-            <input
-              class="bg-white border border-black rounded-xl w-64 md:w-90 lg:w-120"
-              type="text"
-              id="respuesta"
-              maxlength="1"
-              required
-            />
-
-            <button
-              class="btn-guardar my-5 border border-black rounded-xl w-64 md:w-90 lg:w-120 bg-yellow-300 hover:bg-yellow-400"
-              type="submit"
-            >
-              Guardar Pregunta
-            </button>
-          </form>
-        </div>
-        <div class="bg-cyan-100 mt-4">
-          <h3 class="font-bold text-base md:text-lg lg:text-xl">
-            Preguntas Guardadas:
-          </h3>
-
-          <ul id="listaPreguntas"></ul>
-        </div>
-
-        <button
-          class="btn-volver-menu sombreado bg-white hover:bg-cyan-300 border border-black rounded-xl w-64 md:w-90 lg:w-120 my-5"
-        >
-          Volver al Menú
-        </button>
-      </section>
-
       <!-- Puntajes -->
       <section id="puntajes" class="vista" style="display: none">
         <figure class="flex justify-center items-center">
@@ -199,7 +111,7 @@
           <h2 class="font-bold text-base md:text-lg lg:text-xl">
             Puntajes Guardados
           </h2>
-          <ul id="lista-puntajes"></ul>
+          <ul id="lista-puntajesApi"></ul>
         </div>
         <button
           class="btn-volver-menu sombreado bg-white hover:bg-cyan-300 border border-black rounded-xl w-64 md:w-90 lg:w-120 my-5"
@@ -209,10 +121,7 @@
       </section>
 
       <!-- JavaScript -->
-      <script
-        type="module"
-        src="../scripts/juego_Personalizado/main.js"
-      ></script>
+      <script type="module" src="../scripts/juego_Api/main_api.js"></script>
       <!-- Toastify JS -->
       <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     </main>
