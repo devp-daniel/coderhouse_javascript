@@ -49,19 +49,19 @@
 <p>Proyecto HTML + CSS + JS funcional</p>
 <table>
   <tr>
-    <td><img src="./assets/readme/programa_v3_menu_principal.png" width="780px" height="495px"></td>
-    <td><img src="./assets/readme/programa_v3_menu_juego_personalizado.png" width="780px" height="495px"></td>
+    <td><img src="./assets/readme/programa_v3_menu_principal.png" width="100%"></td>
+    <td><img src="./assets/readme/programa_v3_menu_juego_personalizado.png" width="100%"></td>
   </tr>
   <tr>
-    <td><img src="./assets/readme/programa_v3_preguntas_personalizada.png" width="780px" height="495px"></td>
-    <td><img src="./assets/readme/programa_v3_preguntas_resultado.png" width="780px" height="495px"></td>
+    <td><img src="./assets/readme/programa_v3_preguntas_personalizada.png" width="100%"></td>
+    <td><img src="./assets/readme/programa_v3_preguntas_resultado.png" width="100%"></td>
   </tr>
   <tr>
-    <td><img src="./assets/readme/programa_v3_preguntas.png" width="780px" height="495px"></td>
-    <td><img src="./assets/readme/programa_v3_puntaje.png" width="780px" height="495px"></td>
+    <td><img src="./assets/readme/programa_v3_preguntas.png" width="100%"></td>
+    <td><img src="./assets/readme/programa_v3_puntaje.png" width="100%"></td>
   </tr>
   <tr>
-    <td><img src="./assets/readme/programa_v3_api.png" width="780px" height="495px"></td>
-    <td><img src="./assets/readme/programa_v3_preguntas_api.png" width="780px" height="495px"></td>
+    <td><img src="./assets/readme/programa_v3_api.png" width="100%"></td>
+    <td><img src="./assets/readme/programa_v3_preguntas_api.png" width="100%"></td>
   </tr>
 </table>
