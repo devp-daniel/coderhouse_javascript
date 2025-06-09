@@ -93,6 +93,7 @@ a {
   border-collapse: collapse;
   border-radius: 5px;
   font-size: 12px;
+  width: 100%;
 }
 
 .tabla-preguntas thead,

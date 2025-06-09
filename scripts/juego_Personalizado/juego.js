@@ -46,16 +46,25 @@ export function iniciarJuego() {
   const opciones = document.querySelectorAll(".opcion"); // Opciones
   const puntajeFinalElemento = document.getElementById("puntajeFinal"); // Muestra el puntaje final
 
+  // Corrección cuando se atasca el contador de respuestas
+  // Guardar referencias a los handlers para poder eliminarlos
+  let handlers = [null, null, null];
+
   // Función que muestra la pregunta actual y sus opciones
   function mostrarPregunta() {
     const pregunta = preguntas[preguntaActual];
     contenedorPregunta.textContent = pregunta.pregunta; // Se muestra el texto de la pregunta
     opciones.forEach((opcion, index) => {
+      // Corrección cuando se atasca el contador de respuestas
+      // Elimina el event listener anterior si existe
+      if (handlers[index]) {
+        opcion.removeEventListener("click", handlers[index]);
+      }
       opcion.textContent = pregunta.opciones[index]; // Se asigna el texto de cada opción
       opcion.style.display = "inline-block"; // Asegura que los botones estén visibles
-      opcion.addEventListener("click", () =>
-        verificarRespuesta(pregunta.opciones[index])
-      );
+      // Define y asigna el nuevo handler
+      handlers[index] = () => verificarRespuesta(pregunta.opciones[index]);
+      opcion.addEventListener("click", handlers[index]);
     });
   }
 
