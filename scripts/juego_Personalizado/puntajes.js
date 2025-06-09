@@ -69,7 +69,8 @@ export function mostrarPuntajes() {
           "w-7"
         );
         const imgEliminar = document.createElement("img");
-        imgEliminar.src = "assets/images/eliminar_icon.jpg"; // Icono de eliminar
+        imgEliminar.src =
+          "/coderhouse_javascript/assets/images/eliminar_icon.jpg"; // Icono de eliminar
         imgEliminar.alt = "Boton de eliminar";
         btnEliminar.appendChild(imgEliminar);
         // Evento para eliminar el puntaje seleccionado
